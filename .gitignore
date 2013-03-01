@@ -2,3 +2,5 @@
 .idea
 *.pstore
 .elasticbeanstalk/
+*.pem
+.notes
