@@ -15,8 +15,8 @@ enable :sessions
 
 set :port, 3000
 
-TWITTER_CONSUMER_KEY = "luM4DLbBmpQYrSIcAbOzFg"
-TWITTER_CONSUMER_SECRET = "HZAzInRA2NcIVox3b7IazeOy7zolFTqkJDifyImbEjc"
+TWITTER_CONSUMER_KEY = "rzDUv21waQGsPYAZgPAMg"
+TWITTER_CONSUMER_SECRET = "1NLfK3ig0co40iBOx7riopoUichOVXSxWhOCsFGlZc"
 
 # totally open for CORS
 use Rack::Cors do |config|
