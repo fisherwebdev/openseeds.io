@@ -40,8 +40,8 @@ $(function () {
 
     $.ajax({
       type: "POST",
-      url: "/tweet",
-      data: { "tweet": $textarea.val() },
+      url: "/tweets",
+      data: { "text": $textarea.val() },
       success: tweetSuccess,
       error: tweetError,
       dataType: "json"
@@ -79,7 +79,7 @@ $(function () {
     var params = params || {};
     var timelineType = params.type || "home";
     delete params.type
-    var url = "/" + (params.url || "timeline/" + timelineType);
+    var url = "/" + (params.url || "tweets/?type=" + timelineType);
     delete params.url
 
     $.ajax({
