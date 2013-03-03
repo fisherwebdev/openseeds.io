@@ -156,12 +156,17 @@ post "/tweets" do
         oauth_token: user.oauth_token,
         oauth_token_secret: user.oauth_secret
     )
-    Thread.new { client.update(params[:text ]) }
-    content_type :json
-    {foo: "bar"}.to_json
+
+    # note params[:text] is called status in the twitter api.
+    tweet = client.update(JSON.parse(params['model'])['text']) # was within Thread.new { client.update... }
+
+    status 201
+    tweet.to_json
   rescue Exception => error
-    $stderr << "#{error.class} => #{error.message}\n"
+    $stderr << "\n#{error.class} => #{error.message}\n"
+    $stderr << "\n"
     $stderr << error.backtrace.join("\n") << "\n"
+    $stderr << "\n"
   end
 end
 
