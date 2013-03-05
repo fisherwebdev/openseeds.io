@@ -4,12 +4,14 @@ gem "json"
 gem "sinatra"
 gem "rack"
 gem "rack-cors"
-# gem "sinatra-cross_origin"
 gem "twitter"
-# gem "tweetstream"
 gem "omniauth"
 gem "omniauth-twitter"
+gem "pry"
+
+# for possible heroku deployment
 # gem "foreman"
 # gem "unicorn"
+
+# for dev
 # gem "rerun"
-gem "pry"

@@ -2,7 +2,6 @@
 require "pry" # A better console.  On the command line, after navigating to this directory, do this: pry -r ./app.rb
 
 require "rack/cors"
-# require "sinatra/cross_origin"
 require "cgi"
 require "json"
 require "./user" # Simple, persistent storage of OAuth codes with PStore.  Use a database instead if you need to scale.
@@ -12,19 +11,11 @@ require "bundler"
 Bundler.setup(:default)
 Bundler.require
 
-#configure do
-#  enable :cross_origin
-#end
-#set :allow_origin, :any
-#set :allow_methods, [:get, :post, :options]
-#set :allow_credentials, true
-#set :allow_headers, ["*", "Content-Type", "Accept", "AUTHORIZATION", "Cache-Control", "Origin", "X-Requested-With"]
-#set :max_age, "1728000"
 
 enable :sessions
 set :session_secret, 'a8hksfoonneppaldfoqoirbxiciiikefRrRRjdjha22uawwowdudethisishellasecret'
 
-disable :protection # very dangerous!
+disable :protection # TODO: very dangerous! remove this as soon as possible! could not get CORS POSTs working without this.
 
 set :port, 3000
 

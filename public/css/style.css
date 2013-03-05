@@ -1,9 +1,9 @@
 body {
     font-size: 140%;
-    font-family: GudeaRegular,arial,sans-serif;
+    font-family: /*GudeaRegular,*/helvetica,"droid sans",arial,sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: CartoGothicStdBold,arial;
+    font-family: /*CartoGothicStdBold,*/helvetica,"droid sans",arial,sans-serif;
 }
 #app {
     max-width: 38em;
