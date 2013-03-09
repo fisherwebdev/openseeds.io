@@ -55,7 +55,7 @@ end
 
 
 get "/" do
-  erb :index
+  send_file File.join('public', 'index.html') # we have backbone templates in there, which conflict with erb, so serve this statically
 end
 
 get "/auth/twitter/callback" do
