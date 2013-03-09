@@ -11,7 +11,6 @@ require "bundler"
 Bundler.setup(:default)
 Bundler.require
 
-
 enable :sessions
 set :session_secret, 'a8hksfoonneppaldfoqoirbxiciiikefRrRRjdjha22uawwowdudethisishellasecret'
 
@@ -77,10 +76,6 @@ end
 
 
 
-
-
-
-
 # params:
 #
 # :since_id (Integer) — Returns results with an ID greater than (that is, more recent than) the specified ID.
@@ -93,7 +88,6 @@ end
 # :include_entities (Boolean, String, Integer) — The tweet entities node will be disincluded when set to false.
 # :type (String) - this is a custom param to denote the twitter timeline type
 get "/tweets" do
-
   app_token = session[:secret]
 
   params.delete_if { |key, value| %w(captures splat).include? key } # delete extraneous params
@@ -128,17 +122,6 @@ get "/tweets" do
   end
 end
 
-get "/tweets/new" do
-  app_token = session[:secret]
-  begin
-    user = User.find_by_app_token(app_token)
-    @nickname = user.nickname
-  rescue Exception => error
-    @nickname = "Error!"
-  end
-  erb :tweet
-end
-
 post "/tweets" do
   app_token = session[:secret]
   begin
@@ -160,9 +143,6 @@ post "/tweets" do
     $stderr << "\n"
   end
 end
-
-
-
 
 get "/users/:nickname" do |nickname|
   app_token = session[:secret]
