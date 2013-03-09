@@ -90,8 +90,6 @@ end
 get "/tweets" do
   app_token = session[:secret]
 
-  binding.pry
-
   params.delete_if { |key, value| %w(captures splat).include? key } # delete extraneous params
   symb_params = params.reduce({}) do |memo,(k,v)| # symbolize keys
     memo[k.to_sym] = v
@@ -120,7 +118,7 @@ get "/tweets" do
     $stderr << error.backtrace.join("\n") << "\n"
     $stderr << "\n"
     status 500
-    {error: error.class.name}.to_json
+    {error: error.class.name, app_token: app_token}.to_json
   end
 end
 
