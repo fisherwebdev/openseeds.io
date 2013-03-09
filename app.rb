@@ -90,6 +90,8 @@ end
 get "/tweets" do
   app_token = session[:secret]
 
+  binding.pry
+
   params.delete_if { |key, value| %w(captures splat).include? key } # delete extraneous params
   symb_params = params.reduce({}) do |memo,(k,v)| # symbolize keys
     memo[k.to_sym] = v
