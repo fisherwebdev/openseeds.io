@@ -1,4 +1,4 @@
-define(['config', 'backbone', 'collections/tweetlist', 'views/panelView', 'views/tweetView'],
+define(['config', 'backbone', 'collections/tweetList', 'views/panelView', 'views/tweetView'],
   function (config, Backbone, TweetList, PanelView, TweetView) {
 
 
