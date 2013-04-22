@@ -12,7 +12,7 @@ Bundler.setup(:default)
 Bundler.require
 
 enable :sessions
-set :session_secret, 'a8hksfoonneppaldfoqoirbxiciiikefRrRRjdjha22uawwowdudethisishellasecret'
+set :session_secret, 'dudethisishellasecret'
 
 disable :protection # TODO: very dangerous! remove this as soon as possible! could not get CORS POSTs working without this.
 
@@ -29,8 +29,8 @@ use Rack::Cors do |config|
   end
 end
 
-TWITTER_CONSUMER_KEY = "rzDUv21waQGsPYAZgPAMg"
-TWITTER_CONSUMER_SECRET = "1NLfK3ig0co40iBOx7riopoUichOVXSxWhOCsFGlZc"
+TWITTER_CONSUMER_KEY = "dudethisishellasecret"
+TWITTER_CONSUMER_SECRET = "dudethisishellasecret"
 
 use OmniAuth::Builder do
   use TwitterAuthRedirect # custom middleware to store the post-auth redirect address
